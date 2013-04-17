@@ -14,6 +14,7 @@ from bravo.terrain.trees import ConeTree, NormalTree, RoundTree, RainforestTree
 from bravo.utilities.automatic import column_scan
 from bravo.world import ChunkNotLoaded
 
+
 class Trees(object):
     """
     Turn saplings into trees.
@@ -83,6 +84,7 @@ class Trees(object):
     scan = column_scan
 
     name = "trees"
+
 
 class Grass(object):
 
@@ -175,6 +177,7 @@ class Grass(object):
 
     before = tuple()
     after = tuple()
+
 
 class Rain(object):
     """

@@ -7,6 +7,7 @@ from bravo.utilities.coords import split_coords
 DOOR_TOP_BLOCK = 0x8
 DOOR_IS_SWUNG = 0x4
 
+
 class Trapdoor(object):
 
     implements(IPreBuildHook, IPreDigHook)
@@ -52,6 +53,7 @@ class Trapdoor(object):
 
     before = tuple()
     after = tuple()
+
 
 class Door(object):
     """

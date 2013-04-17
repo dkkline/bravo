@@ -6,6 +6,7 @@ from bravo.ibravo import IPreBuildHook, IDigHook
 # Metadata
 HEAD_PART = 0x8
 
+
 class Bed(object):
     """
     Make placing/removing beds work correctly.

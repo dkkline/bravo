@@ -35,6 +35,7 @@ typeToColor = {
 
 normalColor = '\x1b[0m'
 
+
 class AMPGateway(object):
     """
     Wrapper around the logical implementation of a console.
@@ -140,6 +141,7 @@ class AMPGateway(object):
             line = line.encode("utf8")
         self.print_hook(line)
 
+
 class BravoInterpreter(object):
 
     def __init__(self, handler, ag):
@@ -182,6 +184,7 @@ class BravoInterpreter(object):
                 else:
                     s.append(normalColor + token)
         return normalColor + " ".join(s)
+
 
 class BravoManhole(Manhole):
     """
@@ -246,6 +249,7 @@ This terminal has no fancy features.
 """
 prompt = "Bravo > "
 
+
 class BravoConsole(LineReceiver):
     """
     A console for things not quite as awesome as TTYs.
@@ -279,6 +283,7 @@ class BravoConsole(LineReceiver):
 
 oldSettings = None
 
+
 def start_console():
     ag = AMPGateway("localhost", 25600)
     ag.connect()
@@ -294,6 +299,7 @@ def start_console():
 
     StandardIO(p)
     return p
+
 
 def stop_console():
     if fancy_console:

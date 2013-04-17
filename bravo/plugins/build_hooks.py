@@ -6,6 +6,7 @@ from bravo.entity import Sign as SignTile
 from bravo.ibravo import IPreBuildHook
 from bravo.utilities.coords import split_coords
 
+
 class Sign(object):
     """
     Place signs.

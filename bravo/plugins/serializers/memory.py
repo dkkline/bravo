@@ -7,6 +7,7 @@ from zope.interface import implements
 from bravo.errors import SerializerReadException
 from bravo.ibravo import ISerializer
 
+
 class Memory(object):
     """
     In-memory fake serializer.

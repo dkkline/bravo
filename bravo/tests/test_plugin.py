@@ -4,12 +4,14 @@ import zope.interface
 
 import bravo.plugin
 
+
 class EdgeHolder(object):
 
     def __init__(self, name, before, after):
         self.name = name
         self.before = before
         self.after = after
+
 
 class TestDependencyHelpers(unittest.TestCase):
 
@@ -81,6 +83,7 @@ class TestDependencyHelpers(unittest.TestCase):
         sorted = bravo.plugin.sort_plugins(l)
         self.assertEqual(set(l), set(sorted))
 
+
 class TestOptions(unittest.TestCase):
 
     def test_identity(self):
@@ -126,6 +129,7 @@ class TestOptions(unittest.TestCase):
         d = {"first": None, "second": None}
         self.assertEqual(["second"], bravo.plugin.expand_names(d, names))
 
+
 class ITestInterface(zope.interface.Interface):
 
     name = zope.interface.Attribute("")
@@ -133,6 +137,7 @@ class ITestInterface(zope.interface.Interface):
 
     def meth(arg):
         pass
+
 
 class TestVerifyPlugin(unittest.TestCase):
 

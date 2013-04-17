@@ -34,6 +34,7 @@ world_template = """
 </html>
 """
 
+
 class BravoRootElement(Element):
     """
     Element representing the web site root.
@@ -63,6 +64,7 @@ class BravoRootElement(Element):
         for name in self.worlds.keys():
             worlds.append(tags.li(tags.a(name.title(), href=name)))
         return tag(tags.h2("Worlds"), tags.ul(*worlds))
+
 
 class BravoWorldElement(Element):
     """
@@ -112,6 +114,7 @@ class BravoWorldElement(Element):
                 href='%s/%s' % (self.factory.name, name))))
         return tag(tags.h2("Plugins"), tags.ul(*plugins))
 
+
 class BravoResource(Resource):
 
     def __init__(self, element, isLeaf=True):
@@ -132,6 +135,7 @@ class BravoResource(Resource):
                 request.finish()
 
         return NOT_DONE_YET
+
 
 def bravo_site(services):
     # extract worlds and non-world services only once at startup

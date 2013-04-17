@@ -23,6 +23,7 @@ from bravo.region import MissingChunk, Region
 from bravo.utilities.bits import unpack_nibbles, pack_nibbles
 from bravo.utilities.paths import name_for_anvil
 
+
 class Anvil(object):
     """
     Minecraft Anvil world serializer.

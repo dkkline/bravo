@@ -15,6 +15,7 @@ FALLING = 0x8
 Flag indicating whether fluid is in freefall.
 """
 
+
 class Fluid(object):
     """
     Fluid simulator.
@@ -334,6 +335,7 @@ class Fluid(object):
     before = ("build",)
     after = tuple()
 
+
 class Water(Fluid):
 
     spring = blocks["spring"].slot
@@ -348,6 +350,7 @@ class Water(Fluid):
     step = 0.2
 
     name = "water"
+
 
 class Lava(Fluid):
 

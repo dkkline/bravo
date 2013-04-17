@@ -5,6 +5,7 @@ from twisted.python.failure import Failure
 Time-related utilities.
 """
 
+
 class PendingEvent(object):
     """
     An event which will happen at some point.
@@ -58,6 +59,7 @@ def split_time(timestamp):
     minutes = minutes * 6 // 100
 
     return hours, minutes
+
 
 def timestamp_from_clock(clock):
     """

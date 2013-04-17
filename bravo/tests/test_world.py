@@ -10,6 +10,7 @@ from bravo.config import BravoConfigParser
 from bravo.errors import ChunkNotLoaded
 from bravo.world import World
 
+
 class TestWorldChunks(unittest.TestCase):
 
     def setUp(self):
@@ -185,6 +186,7 @@ class TestWorldChunks(unittest.TestCase):
 
         return d
 
+
 class TestWorld(unittest.TestCase):
 
     def setUp(self):
@@ -219,6 +221,7 @@ class TestWorld(unittest.TestCase):
         def cb(player):
             self.assertEqual(player.username, "unittest")
         return d
+
 
 class TestWorldConfig(unittest.TestCase):
 

@@ -13,6 +13,7 @@ from bravo.utilities.furnace import (furnace_recipes, furnace_on_off,
     update_all_windows_slot, update_all_windows_progress)
 from bravo.blocks import furnace_fuel, unstackable
 
+
 class Entity(object):
     """
     Class representing an entity.
@@ -43,6 +44,7 @@ class Entity(object):
         return "%s(eid=%d, location=%s)" % (self.name, self.eid, self.location)
 
     __str__ = __repr__
+
 
 class Player(Entity):
     """
@@ -111,6 +113,7 @@ class Player(Entity):
                                   count=1)
         return packet
 
+
 class Painting(Entity):
     """
     A painting on a wall.
@@ -139,6 +142,7 @@ class Painting(Entity):
 
         return make_packet("painting", eid=self.eid, title=self.motive, x=x,
                 y=y, z=z, face=self.face)
+
 
 class Pickup(Entity):
     """
@@ -174,6 +178,7 @@ class Pickup(Entity):
         return make_packet("pickup", eid=self.eid, primary=self.item[0],
                 secondary=self.item[1], count=self.quantity, x=x, y=y, z=z,
                 yaw=0, pitch=0, roll=0)
+
 
 class Mob(Entity):
     """
@@ -307,12 +312,14 @@ class Chuck(Mob):
             (.5, 0, -.5),
             (-.5, 0, -.5))
 
+
 class Cow(Mob):
     """
     Large, four-legged milk containers.
     """
 
     name = "Cow"
+
 
 class Creeper(Mob):
     """
@@ -338,6 +345,7 @@ class Creeper(Mob):
             17: ("byte", int(self.aura)),
         }
 
+
 class Ghast(Mob):
     """
     A very melancholy ghost.
@@ -345,12 +353,14 @@ class Ghast(Mob):
 
     name = "Ghast"
 
+
 class GiantZombie(Mob):
     """
     Like a regular zombie, but far larger.
     """
 
     name = "GiantZombie"
+
 
 class Pig(Mob):
     """
@@ -376,12 +386,14 @@ class Pig(Mob):
             16: ("byte", int(self.saddle)),
         }
 
+
 class ZombiePigman(Mob):
     """
     A zombie pigman.
     """
 
     name = "PigZombie"
+
 
 class Sheep(Mob):
     """
@@ -412,12 +424,14 @@ class Sheep(Mob):
             16: ("byte", color),
         }
 
+
 class Skeleton(Mob):
     """
     An archer skeleton.
     """
 
     name = "Skeleton"
+
 
 class Slime(Mob):
     """
@@ -443,6 +457,7 @@ class Slime(Mob):
             16: ("byte", self.size),
         }
 
+
 class Spider(Mob):
     """
     A spider.
@@ -450,12 +465,14 @@ class Spider(Mob):
 
     name = "Spider"
 
+
 class Squid(Mob):
     """
     An aquatic source of ink.
     """
 
     name = "Squid"
+
 
 class Wolf(Mob):
     """
@@ -491,6 +508,7 @@ class Wolf(Mob):
             16: ("byte", flags),
         }
 
+
 class Zombie(Mob):
     """
     A zombie.
@@ -521,6 +539,7 @@ entities = dict((entity.name, entity)
     )
 )
 
+
 class Tile(object):
     """
     An entity that is also a block.
@@ -545,6 +564,7 @@ class Tile(object):
 
         return ""
 
+
 class Chest(Tile):
     """
     A tile that holds items.
@@ -556,6 +576,7 @@ class Chest(Tile):
         super(Chest, self).__init__(*args, **kwargs)
 
         self.inventory = ChestStorage()
+
 
 class Furnace(Tile):
     """
@@ -730,6 +751,7 @@ class Furnace(Tile):
         # By default, yes, you can craft.
         return True
 
+
 class MobSpawner(Tile):
     """
     A tile that spawns mobs.
@@ -737,12 +759,14 @@ class MobSpawner(Tile):
 
     name = "MobSpawner"
 
+
 class Music(Tile):
     """
     A tile which produces a pitch when whacked.
     """
 
     name = "Music"
+
 
 class Sign(Tile):
     """

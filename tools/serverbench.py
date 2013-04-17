@@ -60,6 +60,7 @@ from twisted.python import log
 
 log.startLogging(sys.stdout)
 
+
 class TrickleProtocol(Protocol):
     """
     Implementation of the "trickle" DoS attack on MC servers.
@@ -109,6 +110,7 @@ class TrickleProtocol(Protocol):
 
         self.factory.connections -= 1
 
+
 class TrickleFactory(Factory):
     """
     Factory for maintaining a certain number of open connections.
@@ -154,11 +156,13 @@ class TrickleFactory(Factory):
         log.msg("%d active connections, %d pending connections" %
             (self.connections, self.pending))
 
+
 def warn_ulimit(called=[False]):
     if not called[0]:
         log.msg("Couldn't bind to get an open connection.")
         log.msg("Consider raising your ulimit for open files.")
     called[0] = True
+
 
 def warn_dns(called=[False]):
     if not called[0]:
@@ -166,6 +170,7 @@ def warn_dns(called=[False]):
         log.msg("Either your ulimit for open files is too low...")
         log.msg("...or your target isn't resolvable.")
     called[0] = True
+
 
 def exit_refused(called=[False]):
     if not called[0]:

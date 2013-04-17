@@ -1,5 +1,6 @@
 from bravo.blocks import blocks, items
 
+
 class SpeedyDigPolicy(object):
     """
     A digging policy which lets blocks be broken very fast.
@@ -43,6 +44,7 @@ effect = {
     items["wooden-shovel"].slot: 2,
 }
 
+
 def effect_multiplier(slot):
     """
     The multiplier for effectiveness for a given tool.
@@ -57,6 +59,7 @@ def effect_multiplier(slot):
         return 1.0
 
     return effect[primary]
+
 
 def is_effective_against(block, slot):
     if not slot or slot.primary not in items:
@@ -102,6 +105,7 @@ def is_effective_against(block, slot):
         )
 
     return False
+
 
 class NotchyDigPolicy(object):
     """

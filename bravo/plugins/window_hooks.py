@@ -13,6 +13,7 @@ from bravo.location import Location
 from bravo.utilities.building import chestsAround
 from bravo.utilities.coords import adjust_coords_for_face, split_coords
 
+
 def drop_items(factory, location, items, y_offset = 0):
     """
     Loop over items and drop all of them
@@ -32,6 +33,7 @@ def drop_items(factory, location, items, y_offset = 0):
         if item is None:
             continue
         factory.give(coords, (item[0], item[1]), item[2])
+
 
 def processClickMessage(factory, player, window, container):
 
@@ -107,6 +109,7 @@ def processClickMessage(factory, player, window, container):
                     chunk.dirty = True
     return True
 
+
 class Windows(object):
     '''
     Generic window hooks
@@ -157,6 +160,7 @@ class Windows(object):
     before = tuple()
     after = ("inventory",)
 
+
 class Inventory(object):
     '''
     Player's inventory hooks
@@ -199,6 +203,7 @@ class Inventory(object):
     before = tuple()
     after = tuple()
 
+
 class Workbench(object):
 
     implements(IWindowOpenHook)
@@ -224,6 +229,7 @@ class Workbench(object):
 
     before = tuple()
     after = tuple()
+
 
 class Furnace(object):
 
@@ -344,6 +350,7 @@ class Furnace(object):
 
     before = ("windows",) # plugins that comes before this plugin
     after = tuple()
+
 
 class Chest(object):
 

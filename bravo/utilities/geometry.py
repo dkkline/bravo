@@ -2,6 +2,7 @@
 Simple pixel graphics helpers.
 """
 
+
 def gen_line_simple(point1, point2):
     """
     An adaptation of Bresenham's line algorithm in three dimensions.
@@ -33,10 +34,12 @@ def gen_line_simple(point1, point2):
 
     yield ox, oy, oz
 
+
 class HurpPoint(object):
 
     def __init__(self, t):
         self.x, self.y, self.z = t
+
 
 def gen_close_point(point1, point2):
     """
@@ -53,6 +56,7 @@ def gen_close_point(point1, point2):
     g = gen_line_simple(point1, point2)
     next(g)
     return next(g)
+
 
 def gen_line_covered(point1, point2):
     """

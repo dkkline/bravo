@@ -1,6 +1,7 @@
 
 from bravo.blocks import blocks
 
+
 def chestsAround(factory, coords):
     """
     Coordinates of chests connected to the block with coordinates

@@ -7,8 +7,10 @@ from bravo.plugin import retrieve_plugins
 from bravo.world import World
 from bravo.utilities.redstone import Asic, truthify_block
 
+
 class RedstoneMockFactory(object):
     pass
+
 
 class TestRedstone(TestCase):
 

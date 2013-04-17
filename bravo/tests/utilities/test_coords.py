@@ -2,6 +2,7 @@ import unittest
 
 from bravo.utilities.coords import adjust_coords_for_face
 
+
 class TestAdjustCoords(unittest.TestCase):
 
     def test_adjust_plusx(self):

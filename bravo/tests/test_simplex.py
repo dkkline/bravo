@@ -2,6 +2,7 @@ import unittest
 
 from bravo.simplex import set_seed, simplex, octaves2, octaves3
 
+
 class TestOctaves(unittest.TestCase):
 
     def setUp(self):

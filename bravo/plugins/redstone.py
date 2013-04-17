@@ -7,6 +7,7 @@ from bravo.ibravo import IAutomaton, IDigHook
 from bravo.utilities.automatic import naive_scan
 from bravo.utilities.redstone import (RedstoneError, Asic, Circuit)
 
+
 def create_circuit(factory, asic, coords):
     block = factory.world.sync_get_block(coords)
     metadata = factory.world.sync_get_metadata(coords)
@@ -25,6 +26,7 @@ def create_circuit(factory, asic, coords):
         circuit.connect(asic)
 
     return circuit
+
 
 class Redstone(object):
 

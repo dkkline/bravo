@@ -2,6 +2,7 @@ from twisted.internet.protocol import ClientFactory
 from twisted.python import log
 from twisted.words.protocols.irc import IRCClient
 
+
 class BravoIRCClient(IRCClient):
     """
     Simple bot.
@@ -70,6 +71,7 @@ class BravoIRCClient(IRCClient):
 
         for channel in self.channels:
             self.msg(channel, message.encode("utf8"))
+
 
 class BravoIRC(ClientFactory):
     protocol = BravoIRCClient

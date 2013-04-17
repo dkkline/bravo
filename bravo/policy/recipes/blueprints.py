@@ -1,6 +1,7 @@
 from bravo.blocks import blocks, items
 from bravo.beta.recipes import Blueprint
 
+
 def one_by_two(top, bottom, provides, amount, name):
     """
     A simple recipe with one block stacked on top of another.
@@ -9,6 +10,7 @@ def one_by_two(top, bottom, provides, amount, name):
     return Blueprint(name, (1, 2), ((top.key, 1), (bottom.key,1)),
         (provides.key, amount))
 
+
 def two_by_one(material, provides, amount, name):
     """
     A simple recipe with a pair of blocks next to each other.
@@ -16,6 +18,7 @@ def two_by_one(material, provides, amount, name):
 
     return Blueprint(name, (2, 1), ((material.key, 1),) * 2,
         (provides.key, amount))
+
 
 def three_by_one(material, provides, amount, name):
     """
@@ -26,6 +29,7 @@ def three_by_one(material, provides, amount, name):
     return Blueprint(name, (3, 1), ((material.key, 1),) * 3,
         (provides.key, amount))
 
+
 def two_by_two(material, provides, name):
     """
     A recipe involving turning four of one thing, into one of another thing.
@@ -33,6 +37,7 @@ def two_by_two(material, provides, name):
 
     return Blueprint(name, (2, 2), ((material.key, 1),) * 4,
         (provides.key, 1))
+
 
 def three_by_three(outer, inner, provides, name):
     """
@@ -55,6 +60,7 @@ def three_by_three(outer, inner, provides, name):
 
     return Blueprint(name, (3, 3), blueprint, (provides.key, 1))
 
+
 def hollow_eight(outer, provides, name):
     """
     A recipe which requires an empty inner block surrounded by other blocks.
@@ -74,6 +80,7 @@ def hollow_eight(outer, provides, name):
 
     return Blueprint(name, (3, 3), blueprint, (provides.key, 1))
 
+
 def stairs(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -90,6 +97,8 @@ def stairs(material, provides, name):
     return Blueprint("%s-stairs" % name, (3, 3), blueprint, (provides.key, 1))
 
 # Armor.
+
+
 def helmet(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -101,6 +110,7 @@ def helmet(material, provides, name):
     )
 
     return Blueprint("%s-helmet" % name, (3, 2), blueprint, (provides.key, 1))
+
 
 def chestplate(material, provides, name):
     blueprint = (
@@ -118,6 +128,7 @@ def chestplate(material, provides, name):
     return Blueprint("%s-chestplate" % name, (3, 3), blueprint,
         (provides.key, 1))
 
+
 def leggings(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -134,6 +145,7 @@ def leggings(material, provides, name):
     return Blueprint("%s-leggings" % name, (3, 3), blueprint,
         (provides.key, 1))
 
+
 def boots(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -147,6 +159,8 @@ def boots(material, provides, name):
     return Blueprint("%s-boots" % name, (3, 2), blueprint, (provides.key, 1))
 
 # Weaponry.
+
+
 def axe(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -157,6 +171,7 @@ def axe(material, provides, name):
         (items["stick"].key, 1),
     )
     return Blueprint("%s-axe" % name, (2, 3), blueprint, (provides.key, 1))
+
 
 def pickaxe(material, provides, name):
     blueprint = (
@@ -173,6 +188,7 @@ def pickaxe(material, provides, name):
     return Blueprint("%s-pickaxe" % name, (3, 3), blueprint,
         (provides.key, 1))
 
+
 def shovel(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -180,6 +196,7 @@ def shovel(material, provides, name):
         (items["stick"].key, 1),
     )
     return Blueprint("%s-shovel" % name, (1, 3), blueprint, (provides.key, 1))
+
 
 def hoe(material, provides, name):
     blueprint = (
@@ -192,6 +209,7 @@ def hoe(material, provides, name):
     )
     return Blueprint("%s-hoe" % name, (3, 2), blueprint, (provides.key, 1))
 
+
 def sword(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -199,6 +217,7 @@ def sword(material, provides, name):
         (items["stick"].key, 1),
     )
     return Blueprint("%s-sword" % name, (1, 3), blueprint, (provides.key, 1))
+
 
 def clock_compass(material, provides, name):
     blueprint = (
@@ -215,6 +234,7 @@ def clock_compass(material, provides, name):
 
     return Blueprint(name, (3, 3), blueprint, (provides.key, 1))
 
+
 def bowl_bucket(material, provides, amount, name):
     blueprint = (
         (material.key, 1),
@@ -226,6 +246,7 @@ def bowl_bucket(material, provides, amount, name):
     )
     return Blueprint(name, (3, 2), blueprint, (provides.key, amount))
 
+
 def cart_boat(material, provides, name):
     blueprint = (
         (material.key, 1),
@@ -236,6 +257,7 @@ def cart_boat(material, provides, name):
         (material.key, 1),
     )
     return Blueprint(name, (3, 2), blueprint, (provides.key, 1))
+
 
 def door(material, provides, name):
     return Blueprint("%s-door" % name, (2, 3), ((material.key, 1),) * 6,

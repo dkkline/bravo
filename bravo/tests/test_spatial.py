@@ -2,6 +2,7 @@ import unittest
 
 from bravo.utilities.spatial import Block2DSpatialDict, Block3DSpatialDict
 
+
 class TestBlock2DSpatialDict(unittest.TestCase):
 
     def setUp(self):
@@ -57,6 +58,7 @@ class TestBlock2DSpatialDict(unittest.TestCase):
         self.sd[0, 0] = "first"
         results = list(self.sd.itervaluesnear((-8, 0), 8))
         self.assertTrue("first" in results)
+
 
 class TestBlock3DSpatialDict(unittest.TestCase):
 

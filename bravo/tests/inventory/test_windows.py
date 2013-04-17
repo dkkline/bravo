@@ -8,6 +8,7 @@ from bravo.inventory.slots import ChestStorage, FurnaceStorage
 from bravo.inventory.windows import (InventoryWindow, WorkbenchWindow, ChestWindow,
     FurnaceWindow, LargeChestWindow)
 
+
 class TestInventoryInternals(unittest.TestCase):
     """
     The Inventory class internals
@@ -20,6 +21,7 @@ class TestInventoryInternals(unittest.TestCase):
         self.assertEqual(self.i.armor, [None] * 4)
         self.assertEqual(self.i.storage, [None] * 27)
         self.assertEqual(self.i.holdables, [None] * 9)
+
 
 class TestInventory(unittest.TestCase):
 
@@ -87,6 +89,7 @@ class TestInventory(unittest.TestCase):
         self.assertEqual(self.i.holdables[0], (2, 0, 1))
         self.assertEqual(self.i.holdables[1], None)
 
+
 class TestInventorySerialization(unittest.TestCase):
     def setUp(self):
         self.i = Inventory()
@@ -114,6 +117,7 @@ class TestInventorySerialization(unittest.TestCase):
         m = self.i.save_to_list()
         self.assertEqual(m, self.l)
         self.assertEqual(self.i.armor[3], (3, 0, 1))
+
 
 class TestInventoryIntegration(unittest.TestCase):
 
@@ -311,6 +315,7 @@ class TestInventoryIntegration(unittest.TestCase):
         items = self.i.drop_selected(True)
         self.assertEqual(self.i.selected, (1, 0, 2))
         self.assertEqual(items, [(1, 0, 1)])
+
 
 class TestWindowIntegration(unittest.TestCase):
 
@@ -512,6 +517,7 @@ class TestWindowIntegration(unittest.TestCase):
         self.assertEqual(items[1], (280, 0, 1))
         self.assertEqual(items[2], (3, 0, 1))
 
+
 class TestWorkbenchIntegration(unittest.TestCase):
     """
     select() numbers
@@ -628,6 +634,7 @@ class TestWorkbenchIntegration(unittest.TestCase):
             (bravo.blocks.items["golden-apple"].slot, 0, 1))
         self.assertEqual(self.i.slots.crafting[0], None)
         self.assertEqual(self.i.slots.crafted[0], None)
+
 
 class TestChestIntegration(unittest.TestCase):
     def setUp(self):

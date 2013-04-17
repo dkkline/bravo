@@ -53,6 +53,7 @@ CORNER_NW = 0x7 # Northwest corner
 CORNER_NE = 0x8 # Northeast corner
 CORNER_SE = 0x9 # Southeast corner
 
+
 class Tracks(object):
     """
     Build and dig hooks for mine cart tracks.

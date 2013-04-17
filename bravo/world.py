@@ -22,6 +22,7 @@ from bravo.utilities.coords import split_coords
 from bravo.utilities.temporal import PendingEvent
 from bravo.mobmanager import MobManager
 
+
 def coords_to_chunk(f):
     """
     Automatically look up the chunk for the coordinates, and convert world
@@ -42,6 +43,7 @@ def coords_to_chunk(f):
         return d
 
     return decorated
+
 
 def sync_coords_to_chunk(f):
     """
@@ -64,6 +66,7 @@ def sync_coords_to_chunk(f):
         return f(self, chunk, (smallx, y, smallz), *args, **kwargs)
 
     return decorated
+
 
 class World(object):
     """

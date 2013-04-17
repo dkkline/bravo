@@ -3,6 +3,7 @@ from twisted.trial import unittest
 from bravo.location import Location
 from bravo.utilities.geometry import gen_close_point, gen_line_simple
 
+
 class TestGenClosePoint(unittest.TestCase):
 
     def test_straight_line(self):
@@ -13,6 +14,7 @@ class TestGenClosePoint(unittest.TestCase):
 
     def test_perfect_diagonal_3d_negative(self):
         self.assertEqual((-1, -1, -1), gen_close_point((0, 0, 0), (-3, -3, -3)))
+
 
 class TestGenLineSimple(unittest.TestCase):
 

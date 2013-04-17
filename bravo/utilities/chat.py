@@ -40,10 +40,12 @@ console_colors = {
     u"§e": "\x1b[1;33m", # yellow       -> bold yellow
 }
 
+
 def chat_name(s):
     return "%s%s%s" % (
         chat_colors[hash(s) % len(chat_colors)], s, u"§f"
     )
+
 
 def fancy_console_name(s):
     return "%s%s%s" % (
@@ -51,6 +53,7 @@ def fancy_console_name(s):
         s,
         '\x1b[0m'
     )
+
 
 def sanitize_chat(s):
     """
@@ -63,6 +66,7 @@ def sanitize_chat(s):
         s = s[:-2]
 
     return s
+
 
 def username_alternatives(n):
     """

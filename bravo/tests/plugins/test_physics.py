@@ -8,10 +8,12 @@ from bravo.ibravo import IDigHook
 import bravo.plugin
 from bravo.world import ChunkNotLoaded, World
 
+
 class PhysicsMockFactory(object):
 
     def flush_chunk(self, chunk):
         pass
+
 
 class TestWater(TestCase):
 

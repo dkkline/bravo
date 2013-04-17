@@ -2,6 +2,7 @@
 from math import sin, cos, floor, ceil
 from bravo.simplex import dot3
 
+
 def check_collision(vector, offsetlist, factory):
     cont = True
     for offset_x, offset_y, offset_z in offsetlist:
@@ -34,6 +35,7 @@ def check_collision(vector, offsetlist, factory):
     if cont:
         return True
 
+
 def rotate_coords_list(coords, theta, offset):
     """ Rotates a list of coordinates counterclockwise by the specified degree
         the add variables are there for convenience to allow one to give an
@@ -48,6 +50,7 @@ def rotate_coords_list(coords, theta, offset):
         rotated_x = calculated_x * cosine - calculated_z * sine
         rotated_z = calculated_x * sine + calculated_z * cosine
         rotated_list.append((rotated_x, y, rotated_z))
+
 
 def slide_collision_vector(vector,normal):
     """ Returns a vector that allows an entity to slide along blocks."""

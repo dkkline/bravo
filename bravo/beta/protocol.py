@@ -39,6 +39,7 @@ from bravo.utilities.temporal import timestamp_from_clock
 
 SUPPORTED_PROTOCOL = 60
 
+
 class BetaServerProtocol(object, Protocol, TimeoutMixin):
     """
     The Minecraft Alpha/Beta server protocol.
@@ -616,6 +617,7 @@ class KickedProtocol(BetaServerProtocol):
 
     def connectionMade(self):
         self.error("%s" % self.reason)
+
 
 class BetaProxyProtocol(BetaServerProtocol):
     """

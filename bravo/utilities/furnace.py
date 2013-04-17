@@ -18,6 +18,7 @@ furnace_recipes = {
     items["raw-porkchop"].slot: Slot.from_key(items["cooked-porkchop"].key, 1),
 }
 
+
 def update_all_windows_slot(factory, coords, slot, item):
     '''
     For players who have THIS furnace's window opened send update for
@@ -40,6 +41,7 @@ def update_all_windows_slot(factory, coords, slot, item):
                         wid=window.wid, slot=slot, primary=item.primary,
                         secondary=item.secondary, count=item.quantity)
 
+
 def update_all_windows_progress(factory, coords, bar, value):
     '''
     For players who have THIS furnace's window opened send update for
@@ -56,6 +58,7 @@ def update_all_windows_progress(factory, coords, bar, value):
             if window.coords == coords:
                 p.write_packet("window-progress", wid=window.wid,
                     bar=bar, progress=value)
+
 
 def furnace_on_off(factory, coords, state):
     '''

@@ -4,6 +4,7 @@ from UserDict import DictMixin
 
 from bravo.utilities.coords import taxicab2
 
+
 class SpatialDict(object, DictMixin):
     """
     A spatial dictionary, for accelerating spatial lookups.
@@ -90,6 +91,7 @@ class SpatialDict(object, DictMixin):
         for k, v in self.iteritemsnear(key, radius):
             yield v
 
+
 class Block2DSpatialDict(SpatialDict):
     """
     Class for tracking blocks in the XZ-plane.
@@ -139,6 +141,7 @@ class Block2DSpatialDict(SpatialDict):
         maxz += expand
 
         return product(xrange(minx, maxx), xrange(minz, maxz))
+
 
 class Block3DSpatialDict(SpatialDict):
     """

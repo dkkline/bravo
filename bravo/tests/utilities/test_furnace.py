@@ -9,12 +9,14 @@ from bravo.entity import Furnace as FurnaceTile
 from bravo.inventory.windows import FurnaceWindow
 from bravo.utilities.furnace import update_all_windows_slot, update_all_windows_progress
 
+
 class FakeChunk(object):
     def __init__(self):
         self.states = []
 
     def set_block(self, coords, itemid):
         self.states.append(itemid)
+
 
 class FakeWorld(object):
     def __init__(self):
@@ -23,6 +25,7 @@ class FakeWorld(object):
     def request_chunk(self, x, z):
         return defer.succeed(self.chunk)
 
+
 class FakeFactory(object):
     def __init__(self):
         self.protocols = []
@@ -30,6 +33,7 @@ class FakeFactory(object):
 
     def flush_chunk(self, chunk):
         pass
+
 
 class FakeProtocol(object):
     def __init__(self):
@@ -41,6 +45,7 @@ class FakeProtocol(object):
 
 coords = 0, 0, 0, 0, 0 # bigx, smallx, bigz, smallz, y
 coords2 = 0, 0, 0, 0, 1
+
 
 class TestFurnaceProcessInternals(unittest.TestCase):
 
@@ -90,6 +95,7 @@ class TestFurnaceProcessInternals(unittest.TestCase):
         self.tile.inventory.crafted[0] = Slot(blocks['glass'].slot, 0, 64)
         self.assertFalse(self.tile.can_craft())
 
+
 class TestFurnaceProcessWindowsUpdate(unittest.TestCase):
 
     def setUp(self):
@@ -131,6 +137,7 @@ class TestFurnaceProcessWindowsUpdate(unittest.TestCase):
         self.assertEqual(self.protocol2.write_packet_calls, [])
         self.assertEqual(self.protocol3.write_packet_calls,
             [(('window-progress',), {'wid': 2, 'bar': 0, 'progress': 55})])
+
 
 class TestFurnaceProcessCrafting(unittest.TestCase):
 

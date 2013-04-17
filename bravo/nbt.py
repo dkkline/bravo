@@ -16,6 +16,7 @@ TAG_STRING = 8
 TAG_LIST = 9
 TAG_COMPOUND = 10
 
+
 class TAG(object):
     """Each Tag needs to take a file-like object for reading and writing.
     The file object will be initialised by the calling code."""
@@ -41,6 +42,7 @@ class TAG(object):
     def pretty_tree(self, indent=0):
         return ("\t"*indent) + self.tag_info()
 
+
 class _TAG_Numeric(TAG):
     def __init__(self, value=None, name=None, buffer=None):
         super(_TAG_Numeric, self).__init__(value, name)
@@ -60,29 +62,37 @@ class _TAG_Numeric(TAG):
         return str(self.value)
 
 #== Value Tags ==#
+
+
 class TAG_Byte(_TAG_Numeric):
     id = TAG_BYTE
     fmt = Struct(">b")
+
 
 class TAG_Short(_TAG_Numeric):
     id = TAG_SHORT
     fmt = Struct(">h")
 
+
 class TAG_Int(_TAG_Numeric):
     id = TAG_INT
     fmt = Struct(">i")
+
 
 class TAG_Long(_TAG_Numeric):
     id = TAG_LONG
     fmt = Struct(">q")
 
+
 class TAG_Float(_TAG_Numeric):
     id = TAG_FLOAT
     fmt = Struct(">f")
 
+
 class TAG_Double(_TAG_Numeric):
     id = TAG_DOUBLE
     fmt = Struct(">d")
+
 
 class TAG_Byte_Array(TAG):
     id = TAG_BYTE_ARRAY
@@ -106,6 +116,7 @@ class TAG_Byte_Array(TAG):
     #Printing and Formatting of tree
     def __repr__(self):
         return "[%i bytes]" % len(self.value)
+
 
 class TAG_String(TAG):
     id = TAG_STRING
@@ -134,6 +145,8 @@ class TAG_String(TAG):
         return self.value
 
 #== Collection Tags ==#
+
+
 class TAG_List(TAG):
     id = TAG_LIST
 
@@ -177,6 +190,7 @@ class TAG_List(TAG):
             output.extend([tag.pretty_tree(indent+1) for tag in self.tags])
             output.append(("\t"*indent) + "}")
         return '\n'.join(output)
+
 
 class TAG_Compound(TAG, DictMixin):
     id = TAG_COMPOUND
@@ -270,6 +284,7 @@ class TAG_Compound(TAG, DictMixin):
 
 TAGLIST = {TAG_BYTE:TAG_Byte, TAG_SHORT:TAG_Short, TAG_INT:TAG_Int, TAG_LONG:TAG_Long, TAG_FLOAT:TAG_Float, TAG_DOUBLE:TAG_Double, TAG_BYTE_ARRAY:TAG_Byte_Array, TAG_STRING:TAG_String, TAG_LIST:TAG_List, TAG_COMPOUND:TAG_Compound}
 
+
 class NBTFile(TAG_Compound):
     """Represents an NBT file object"""
 
@@ -339,6 +354,7 @@ class NBTFile(TAG_Compound):
 # Useful utility functions for handling large NBT structures elegantly and
 # Pythonically.
 
+
 def unpack_nbt(tag):
     """
     Unpack an NBT tag into a native Python data structure.
@@ -350,6 +366,7 @@ def unpack_nbt(tag):
         return dict((i.name, unpack_nbt(i)) for i in tag.tags)
     else:
         return tag.value
+
 
 def pack_nbt(s):
     """

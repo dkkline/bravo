@@ -7,6 +7,7 @@ import bravo.blocks
 from bravo.ibravo import IPreBuildHook
 import bravo.plugin
 
+
 class TileMockFactory(object):
 
     def __init__(self):
@@ -21,6 +22,7 @@ class TileMockFactory(object):
                 return succeed(TileMockChunk())
 
         self.world = TileMockWorld()
+
 
 class TestSign(TestCase):
 

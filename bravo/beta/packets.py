@@ -10,6 +10,7 @@ from construct import BFloat32, BFloat64
 from construct import BitStruct, BitField
 from construct import StringAdapter, LengthValueAdapter, Sequence
 
+
 def IPacket(object):
     """
     Interface for packets.
@@ -27,6 +28,7 @@ def IPacket(object):
 
         Exceptions may be raised if the parser finds invalid data.
         """
+
 
 def simple(name, fmt, *args):
     """
@@ -65,10 +67,12 @@ from bravo.encodings import ucs2
 from codecs import register
 register(ucs2)
 
+
 class DoubleAdapter(LengthValueAdapter):
 
     def _encode(self, obj, context):
         return len(obj) / 2, obj
+
 
 def AlphaString(name):
     return StringAdapter(
@@ -82,6 +86,8 @@ def AlphaString(name):
     )
 
 # Boolean converter.
+
+
 def Bool(*args, **kwargs):
     return Flag(*args, default=True, **kwargs)
 
@@ -112,6 +118,8 @@ metadata_types = ["byte", "short", "int", "float", "string", "slot",
     "coords"]
 
 # Metadata adaptor.
+
+
 class MetadataAdapter(Adapter):
 
     def _decode(self, obj, context):
@@ -810,6 +818,7 @@ packet_stream = Struct("packet_stream",
     ),
 )
 
+
 def parse_packets(bytestream):
     """
     Opportunistically parse out as many packets as possible from a raw
@@ -841,6 +850,7 @@ incremental_packet_stream = Struct("incremental_packet_stream",
     ),
 )
 
+
 def parse_packets_incrementally(bytestream):
     """
     Parse out packets one-by-one, yielding a tuple of packet header and packet
@@ -863,6 +873,7 @@ def parse_packets_incrementally(bytestream):
         yield header, payload
 
 packets_by_name = dict((v.name, k) for (k, v) in packets.iteritems())
+
 
 def make_packet(packet, *args, **kwargs):
     """
@@ -888,6 +899,7 @@ def make_packet(packet, *args, **kwargs):
         print container
     payload = packets[header].build(container)
     return chr(header) + payload
+
 
 def make_error_packet(message):
     """

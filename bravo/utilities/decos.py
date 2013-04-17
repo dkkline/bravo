@@ -7,6 +7,7 @@ Decorators.
 
 timers = {}
 
+
 def timed(f):
     """
     Print out timing statistics on a given callable.

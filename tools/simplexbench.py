@@ -12,6 +12,7 @@ chunk3d = chunk2d * 128
 
 set_seed(time())
 
+
 def timed(f):
     @wraps(f)
     def deco():
@@ -33,17 +34,21 @@ def timed(f):
             % (315 * chunk3d * actual))
     return deco
 
+
 @timed
 def time_simplex2(i):
     simplex2(i, i)
+
 
 @timed
 def time_simplex3(i):
     simplex3(i, i, i)
 
+
 @timed
 def time_octaves2(i):
     octaves2(i, i, 5)
+
 
 @timed
 def time_octaves3(i):

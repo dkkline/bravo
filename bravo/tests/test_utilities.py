@@ -9,6 +9,7 @@ from bravo.utilities.chat import sanitize_chat
 from bravo.utilities.coords import split_coords, taxicab2, taxicab3
 from bravo.utilities.temporal import split_time
 
+
 class TestCoordHandling(unittest.TestCase):
 
     def test_split_coords(self):
@@ -40,6 +41,7 @@ class TestCoordHandling(unittest.TestCase):
         for case in cases:
             self.assertEqual(taxicab3(*case), cases[case])
 
+
 class TestBitTwiddling(unittest.TestCase):
 
     def test_unpack_nibbles_single(self):
@@ -70,12 +72,14 @@ class TestBitTwiddling(unittest.TestCase):
 
         self.assertEqual(pack_nibbles(array("B", [0xff, 0xff])), "\xff")
 
+
 class TestStringMunging(unittest.TestCase):
 
     def test_sanitize_chat_color_control_at_end(self):
         message = u"§0Test§f"
         sanitized = u"§0Test"
         self.assertEqual(sanitize_chat(message), sanitized)
+
 
 class TestNumberMunching(unittest.TestCase):
 

@@ -2,6 +2,7 @@ import unittest
 
 from bravo.config import BravoConfigParser
 
+
 class TestBravoConfigParser(unittest.TestCase):
 
     def setUp(self):

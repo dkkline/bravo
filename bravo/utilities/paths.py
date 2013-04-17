@@ -26,6 +26,7 @@ def base36(i):
 
     return s
 
+
 def names_for_chunk(x, z):
     """
     Calculate the folder and file names for given chunk coordinates.
@@ -37,12 +38,14 @@ def names_for_chunk(x, z):
 
     return first, second, third
 
+
 def name_for_region(x, z):
     """
     Figure out the name for a region file, given chunk coordinates.
     """
 
     return "r.%s.%s.mcr" % (x // 32, z // 32)
+
 
 def name_for_anvil(x, z):
     """

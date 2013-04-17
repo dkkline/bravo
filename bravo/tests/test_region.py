@@ -4,6 +4,7 @@ from twisted.python.filepath import FilePath
 
 from bravo.region import Region
 
+
 class TestRegion(TestCase):
 
     def setUp(self):

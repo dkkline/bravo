@@ -2,10 +2,12 @@ from gzip import GzipFile
 from StringIO import StringIO
 from struct import pack, unpack
 
+
 class MissingChunk(Exception):
     """
     The requested chunk isn't in this region.
     """
+
 
 class Region(object):
     """

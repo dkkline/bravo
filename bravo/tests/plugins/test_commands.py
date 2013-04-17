@@ -5,6 +5,7 @@ import bravo.ibravo
 import bravo.plugin
 from bravo.entity import Player
 
+
 class CommandsMockFactory(object):
 
     time = 0
@@ -41,6 +42,7 @@ class CommandsMockFactory(object):
     def update_season(self):
         pass
 
+
 class PluginMixin(object):
 
     def setUp(self):
@@ -53,9 +55,11 @@ class PluginMixin(object):
     def test_trivial(self):
         pass
 
+
 class TestAscend(PluginMixin, TestCase):
 
     name = "ascend"
+
 
 class TestGetpos(PluginMixin, TestCase):
 
@@ -66,6 +70,7 @@ class TestGetpos(PluginMixin, TestCase):
         self.assertTrue(retval)
         l = list(retval)
         self.assertEqual(len(l), 1)
+
 
 class TestGive(PluginMixin, TestCase):
 
@@ -85,6 +90,7 @@ class TestGive(PluginMixin, TestCase):
         self.hook.chat_command("unittest", [])
 
         self.assertFalse(called[0])
+
 
 class TestTime(PluginMixin, TestCase):
 

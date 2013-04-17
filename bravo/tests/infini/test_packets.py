@@ -2,6 +2,7 @@ from twisted.trial import unittest
 
 from bravo.infini.packets import packets, parse_packets
 
+
 class TestInfiniPacketParsing(unittest.TestCase):
 
     def test_ping(self):
@@ -18,6 +19,7 @@ class TestInfiniPacketParsing(unittest.TestCase):
         self.assertEqual(parsed.header.identifier, 0xff)
         self.assertEqual(parsed.payload.explanation,
             "Invalid client version!")
+
 
 class TestInfiniPacketStream(unittest.TestCase):
 

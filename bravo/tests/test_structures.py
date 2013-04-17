@@ -2,6 +2,7 @@ from twisted.trial import unittest
 
 from bravo.beta.structures import Slot
 
+
 class TestSlot(unittest.TestCase):
     """
     Double-check a few things about ``Slot``.

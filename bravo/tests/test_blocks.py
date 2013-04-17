@@ -4,6 +4,7 @@ from twisted.trial import unittest
 
 from bravo.blocks import blocks, items, parse_block
 
+
 class TestBlockNames(unittest.TestCase):
 
     def test_unique_blocks_and_items(self):
@@ -11,6 +12,7 @@ class TestBlockNames(unittest.TestCase):
         item_names = set(items)
         self.assertTrue(block_names.isdisjoint(item_names),
             repr(block_names & item_names))
+
 
 class TestBlockQuirks(unittest.TestCase):
 
@@ -45,6 +47,7 @@ class TestBlockQuirks(unittest.TestCase):
         self.assertEqual(blocks["pumpkin-stem"].drop,
             items["pumpkin-seeds"].key)
         self.assertEqual(blocks["pumpkin-stem"].quantity, 3)
+
 
 class TestParseBlock(unittest.TestCase):
 

@@ -5,8 +5,10 @@ from twisted.plugin import IPlugin
 from twisted.python.filepath import FilePath
 from twisted.python.usage import Options
 
+
 class BravoOptions(Options):
     optParameters = [["config", "c", "bravo.ini", "Configuration file"]]
+
 
 class BravoServiceMaker(object):
 

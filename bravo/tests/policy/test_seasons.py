@@ -6,6 +6,7 @@ import bravo.ibravo
 import bravo.plugin
 from bravo.policy.seasons import Spring, Winter
 
+
 class TestWinter(unittest.TestCase):
 
     def setUp(self):
@@ -71,6 +72,7 @@ class TestWinter(unittest.TestCase):
 
         self.c.set_block((0, 127, 0), blocks["stone"].slot)
         self.hook.transform(self.c)
+
 
 class TestSpring(unittest.TestCase):
 

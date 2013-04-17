@@ -31,6 +31,7 @@ circle = [(i, j)
     if i**2 + j**2 <= 25
 ]
 
+
 class BravoFactory(Factory):
     """
     A ``Factory`` that creates ``BravoProtocol`` objects when connected to.

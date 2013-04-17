@@ -25,6 +25,7 @@ data = {
     'result_date': datetime.datetime.today(),
 }
 
+
 def add(data):
     params = urllib.urlencode(data)
     response = None
@@ -34,11 +35,14 @@ def add(data):
     f.close()
     print "Server (%s) response: %s" % (URL, response)
 
+
 def average(l):
     return sum(l) / len(l)
 
+
 def stddev(l):
     return math.sqrt(sum((i - average(l))**2 for i in l))
+
 
 def main():
     for bench in glob.glob("benchmarks/*.py"):

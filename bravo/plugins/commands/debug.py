@@ -7,6 +7,8 @@ from bravo.ibravo import IConsoleCommand, IChatCommand
 # If this is ever modified, please also update the documentation;
 # docs/extending.rst includes this verbatim in order to demonstrate authoring
 # commands.
+
+
 class Hello(object):
     """
     Say hello to the world.
@@ -21,6 +23,7 @@ class Hello(object):
     name = "hello"
     aliases = tuple()
     usage = ""
+
 
 class Meliae(object):
     """
@@ -44,6 +47,7 @@ class Meliae(object):
     name = "dump-memory"
     aliases = tuple()
     usage = "<filename>"
+
 
 class Status(object):
     """
@@ -73,6 +77,7 @@ class Status(object):
     aliases = tuple()
     usage = ""
 
+
 class Colors(object):
     """
     Paint with all the colors of the wind.
@@ -90,6 +95,7 @@ class Colors(object):
     name = "colors"
     aliases = tuple()
     usage = ""
+
 
 class Rain(object):
     """
@@ -119,6 +125,7 @@ class Rain(object):
     name = "rain"
     aliases = tuple()
     usage = "<state>"
+
 
 class CreateMob(object):
     """
@@ -157,6 +164,7 @@ class CreateMob(object):
     name = "mob"
     aliases = tuple()
     usage = "<state>"
+
 
 class CheckCoords(object):
     """

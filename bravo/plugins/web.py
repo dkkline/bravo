@@ -60,6 +60,7 @@ names_to_colors = {
     "snow":        (255, 250, 250),
 }
 
+
 class ChunkIllustrator(Resource):
     """
     A helper resource which returns image data for a given chunk.
@@ -104,12 +105,14 @@ class ChunkIllustrator(Resource):
         d.addCallback(self._cb_render_GET, request)
         return NOT_DONE_YET
 
+
 class WorldMapElement(Element):
     """
     Element for the WorldMap plugin.
     """
 
     loader = XMLFile(worldmap_xml)
+
 
 class WorldMap(Resource):
 
@@ -152,6 +155,7 @@ automaton_stats_template = """
     </body>
 </html>
 """
+
 
 class AutomatonElement(Element):
     """
@@ -199,6 +203,7 @@ class AutomatonElement(Element):
 
         return tag(s)
 
+
 class AutomatonStatsElement(Element):
     """
     Render some information about automatons.
@@ -212,6 +217,7 @@ class AutomatonStatsElement(Element):
     @renderer
     def main(self, request, tag):
         return tag(*(AutomatonElement(a) for a in self.factory.automatons))
+
 
 class AutomatonStats(Resource):
 

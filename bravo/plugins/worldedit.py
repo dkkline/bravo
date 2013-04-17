@@ -23,6 +23,7 @@ empty_blocks = []
 for name in empty_blocks_names:
     empty_blocks.append(blocks[name].slot)
 
+
 class _Point(object):
     """
     Small temporary class to hold a 3d point.
@@ -30,6 +31,7 @@ class _Point(object):
 
     def __init__ (self, vec):
         self.x, self.y, self.z = vec
+
 
 class Jumpto(object):
     """

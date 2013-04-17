@@ -3,8 +3,10 @@ from itertools import chain
 from bravo import blocks
 from bravo.beta.structures import Slot
 
+
 class NextLoop(Exception):
     pass
+
 
 class SerializableSlots(object):
     '''
@@ -28,6 +30,7 @@ class SerializableSlots(object):
 
     def save_to_list(self):
         return [i for i in chain(*self.metalist)]
+
 
 class Inventory(SerializableSlots):
     '''

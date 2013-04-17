@@ -5,6 +5,7 @@ from bravo.ibravo import IChatCommand, IConsoleCommand
 This plugin adds useful teleportation commands.
 """
 
+
 class Tp(object):
     """
     Teleport to a player.
@@ -37,6 +38,7 @@ class Tp(object):
     usage = "<player>"
     info = "Teleports you to a player"
 
+
 class Tphere(object):
     """
     Teleport a player to you
@@ -66,6 +68,7 @@ class Tphere(object):
     aliases = tuple()
     usage = "<player>"
     info = "Teleports a player to you"
+
 
 class Tppos(object):
     """

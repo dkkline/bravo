@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from bravo.beta.packets import simple
 
+
 class TestPacketBuilder(TestCase):
 
     def setUp(self):

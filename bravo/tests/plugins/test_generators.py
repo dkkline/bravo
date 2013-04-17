@@ -7,6 +7,7 @@ import bravo.chunk
 import bravo.ibravo
 import bravo.plugin
 
+
 class TestGenerators(unittest.TestCase):
 
     def setUp(self):

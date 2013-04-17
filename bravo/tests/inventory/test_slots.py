@@ -5,6 +5,7 @@ import bravo.blocks
 from bravo.beta.structures import Slot
 from bravo.inventory.slots import comblist, Crafting, Workbench, ChestStorage
 
+
 class TestComblist(unittest.TestCase):
 
     def setUp(self):
@@ -27,6 +28,7 @@ class TestComblist(unittest.TestCase):
         self.i[2] = 6
         self.assertRaises(IndexError, self.i.__setitem__, 5, 0 )
 
+
 class TestCraftingInternals(unittest.TestCase):
     def setUp(self):
         self.i = Crafting()
@@ -34,6 +36,7 @@ class TestCraftingInternals(unittest.TestCase):
     def test_internals(self):
         self.assertEqual(self.i.crafted, [None])
         self.assertEqual(self.i.crafting, [None] * 4)
+
 
 class TestCraftingWood(unittest.TestCase):
     """
@@ -68,6 +71,7 @@ class TestCraftingWood(unittest.TestCase):
         # Force crafting table to be rechecked.
         self.i.update_crafted()
         self.assertTrue(self.i.recipe)
+
 
 class TestCraftingSticks(unittest.TestCase):
     """
@@ -107,6 +111,7 @@ class TestCraftingSticks(unittest.TestCase):
         self.i.update_crafted()
         self.assertTrue(self.i.recipe)
 
+
 class TestCraftingTorches(unittest.TestCase):
     """
     Test basic crafting functionality.
@@ -144,6 +149,7 @@ class TestCraftingTorches(unittest.TestCase):
         self.i.update_crafted()
         self.assertTrue(self.i.recipe)
 
+
 class TestWorkbenchInternals(unittest.TestCase):
     def setUp(self):
         self.i = Workbench()
@@ -151,6 +157,7 @@ class TestWorkbenchInternals(unittest.TestCase):
     def test_internals(self):
         self.assertEqual(self.i.crafted, [None])
         self.assertEqual(self.i.crafting, [None] * 9)
+
 
 class TestCraftingShovel(unittest.TestCase):
     """
@@ -193,6 +200,7 @@ class TestCraftingShovel(unittest.TestCase):
         self.i.update_crafted()
         self.assertTrue(self.i.recipe)
 
+
 class TestCraftingFurnace(unittest.TestCase):
     """
     Test basic crafting functionality.
@@ -233,6 +241,7 @@ class TestCraftingFurnace(unittest.TestCase):
         self.i.update_crafted()
         self.assertEqual(self.i.crafted[0],
             (bravo.blocks.blocks["furnace"].slot, 0, 1))
+
 
 class TestChestSerialization(unittest.TestCase):
     def setUp(self):

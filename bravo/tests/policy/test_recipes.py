@@ -9,6 +9,7 @@ from bravo.policy.recipes.ingredients import all_ingredients
 all_recipes = all_ingredients + all_blueprints
 recipe_dict = dict((r.name, r) for r in all_recipes)
 
+
 class TestRecipeConformity(TestCase):
     """
     All recipes must conform to `IRecipe`'s rules.
@@ -19,6 +20,7 @@ for recipe in all_recipes:
         self.assertNotEqual(IRecipe(recipe), None)
     setattr(TestRecipeConformity, "test_recipe_conformity_%s" % recipe.name,
             f)
+
 
 class TestRecipeProperties(TestCase):
 

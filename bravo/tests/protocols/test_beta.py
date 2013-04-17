@@ -13,6 +13,7 @@ from bravo.chunk import Chunk
 from bravo.config import BravoConfigParser
 from bravo.errors import BetaClientError
 
+
 class FakeTransport(object):
 
     data = []
@@ -24,10 +25,12 @@ class FakeTransport(object):
     def loseConnection(self):
         self.lost = True
 
+
 class FakeFactory(object):
 
     def broadcast(self, packet):
         pass
+
 
 class TestBetaServerProtocol(TestCase):
 

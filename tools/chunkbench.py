@@ -8,6 +8,7 @@ from bravo.ibravo import ITerrainGenerator
 from bravo.policy.packs import beta
 from bravo.plugin import retrieve_plugins, retrieve_named_plugins
 
+
 def empty_chunk():
 
     before = time.time()
@@ -18,6 +19,7 @@ def empty_chunk():
     after = time.time()
 
     return after - before
+
 
 def sequential_seeded(p):
 
@@ -31,6 +33,7 @@ def sequential_seeded(p):
 
     return after - before
 
+
 def repeated_seeds(p):
 
     before = time.time()
@@ -42,6 +45,7 @@ def repeated_seeds(p):
     after = time.time()
 
     return after - before
+
 
 def pipeline():
 

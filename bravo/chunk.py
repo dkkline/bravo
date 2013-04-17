@@ -10,11 +10,13 @@ from bravo.geometry.section import Section
 from bravo.utilities.bits import pack_nibbles
 from bravo.utilities.maths import clamp
 
+
 class ChunkWarning(Warning):
     """
     Somebody did something inappropriate to this chunk, but it probably isn't
     lethal, so the chunk is issuing a warning instead of an exception.
     """
+
 
 def check_bounds(f):
     """
@@ -42,6 +44,7 @@ def check_bounds(f):
 
     return deco
 
+
 def ci(x, y, z):
     """
     Turn an (x, y, z) tuple into a chunk index.
@@ -51,6 +54,7 @@ def ci(x, y, z):
     """
 
     return (x * 16 + z) * 256 + y
+
 
 def segment_array(a):
     """
@@ -68,6 +72,7 @@ def segment_array(a):
         index = (index + 1) % 16
 
     return l
+
 
 def make_glows():
     """
@@ -87,6 +92,7 @@ def make_glows():
     return glow
 
 glow = make_glows()
+
 
 def composite_glow(target, strength, x, y, z):
     """
@@ -137,6 +143,7 @@ def composite_glow(target, strength, x, y, z):
                 ambient_index = (ax * adim + az) * adim + ay
                 target[ci(tx, ty, tz)] += ambient[ambient_index]
 
+
 def iter_neighbors(coords):
     """
     Iterate over the chunk-local coordinates surrounding the given
@@ -168,6 +175,7 @@ def iter_neighbors(coords):
 
         yield nx, nz, ny
 
+
 def neighboring_light(glow, block):
     """
     Calculate the amount of light that should be shone on a block.
@@ -179,6 +187,7 @@ def neighboring_light(glow, block):
     """
 
     return clamp(glow - blocks[block].dim, 0, 15)
+
 
 class Chunk(object):
     """

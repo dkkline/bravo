@@ -5,6 +5,7 @@ from itertools import product
 from bravo.blocks import blocks
 from bravo.chunk import Chunk
 
+
 class TestChunkBlocks(unittest.TestCase):
 
     def setUp(self):

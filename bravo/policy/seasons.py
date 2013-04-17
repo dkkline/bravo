@@ -50,6 +50,7 @@ snow_resistant = set([
 Blocks which cannot have snow spawned on top of them.
 """
 
+
 class Winter(object):
 
     implements(ISeason)
@@ -75,6 +76,7 @@ class Winter(object):
     name = "winter"
 
     day = 0
+
 
 class Spring(object):
 

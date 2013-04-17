@@ -18,6 +18,7 @@ yucp31FByRa1xW2hKq0sxTF/unqSjl6dX/gSBSMb0fa3d6rNlXK8nt9YXUuXrpIXuUTQgMj6Pr+z
 3FTLB3Vuo7Z2WZKTqdxRUJlrzDXmGv9XIwhCy+kb1njC7P78evt9eNOE39TypPsIBgAA
 """.decode("base64")
 
+
 class BugfixTest(unittest.TestCase):
     """
     Bugfix regression tests.
@@ -35,6 +36,7 @@ class BugfixTest(unittest.TestCase):
         temp = tempfile.NamedTemporaryFile()
         temp.flush()
         self.assertRaises(MalformedFileError, NBTFile, temp.name)
+
 
 class ReadWriteTest(unittest.TestCase):
 
@@ -61,6 +63,7 @@ class ReadWriteTest(unittest.TestCase):
         mynbt = NBTFile(self.f.name)
         mynbt.write_file()
 
+
 class TreeManipulationTest(unittest.TestCase):
 
     def setUp(self):
@@ -69,6 +72,7 @@ class TreeManipulationTest(unittest.TestCase):
     def testRootNodeSetup(self):
         self.nbtfile.name = "Hello World"
         self.assertEqual(self.nbtfile.name, "Hello World")
+
 
 class EmptyStringTest(unittest.TestCase):
 
@@ -84,6 +88,7 @@ class EmptyStringTest(unittest.TestCase):
         buffer = StringIO()
         self.nbtfile.write_file(buffer=buffer)
         self.assertEqual(buffer.getvalue(), self.golden_value)
+
 
 class TestTAGCompound(unittest.TestCase):
 

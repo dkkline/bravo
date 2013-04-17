@@ -2,6 +2,7 @@ from __future__ import division
 
 faces = ("-y", "+y", "-z", "+z", "-x", "+x")
 
+
 class Block(object):
     """
     A model for a block.
@@ -148,6 +149,7 @@ class Block(object):
         """
 
         return self._o_dict.get(face)
+
 
 class Item(object):
     """
@@ -611,6 +613,7 @@ A dictionary of ``Block`` objects.
 This dictionary can be indexed by slot number or block name.
 """
 
+
 def _add_block(block):
     blocks[block.slot] = block
     blocks[block.name] = block
@@ -815,6 +818,7 @@ furnace_fuel = {
     items["coal"].slot: 160,          # 80s
     items["lava-bucket"].slot: 2000   # 1000s
 }
+
 
 def parse_block(block):
     """

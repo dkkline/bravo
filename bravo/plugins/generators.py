@@ -13,6 +13,7 @@ from bravo.utilities.maths import morton2
 
 R = Random()
 
+
 class BoringGenerator(object):
     """
     Generates boring slabs of flat stone.
@@ -36,6 +37,7 @@ class BoringGenerator(object):
 
     before = tuple()
     after = tuple()
+
 
 class SimplexGenerator(object):
     """
@@ -80,6 +82,7 @@ class SimplexGenerator(object):
 
     before = tuple()
     after = tuple()
+
 
 class ComplexGenerator(object):
     """
@@ -136,6 +139,7 @@ class WaterTableGenerator(object):
     before = tuple()
     after = ("trees", "caves")
 
+
 class ErosionGenerator(object):
     """
     Erodes stone surfaces into dirt.
@@ -163,6 +167,7 @@ class ErosionGenerator(object):
     before = ("boring", "simplex")
     after = ("watertable",)
 
+
 class GrassGenerator(object):
     """
     Find exposed dirt and grow grass.
@@ -189,6 +194,7 @@ class GrassGenerator(object):
 
     before = ("erosion", "complex")
     after = tuple()
+
 
 class BeachGenerator(object):
     """
@@ -231,6 +237,7 @@ class BeachGenerator(object):
 
     before = ("erosion", "complex")
     after = ("saplings",)
+
 
 class OreGenerator(object):
     """
@@ -284,6 +291,7 @@ class OreGenerator(object):
     before = ("erosion", "complex", "beaches")
     after = tuple()
 
+
 class SafetyGenerator(object):
     """
     Generates terrain features essential for the safety of clients.
@@ -306,6 +314,7 @@ class SafetyGenerator(object):
 
     before = ("boring", "simplex", "complex", "cliffs", "float", "caves")
     after = tuple()
+
 
 class CliffGenerator(object):
     """
@@ -344,6 +353,7 @@ class CliffGenerator(object):
 
     before = tuple()
     after = tuple()
+
 
 class FloatGenerator(object):
     """
@@ -385,6 +395,7 @@ class FloatGenerator(object):
     before = tuple()
     after = tuple()
 
+
 class CaveGenerator(object):
     """
     Carve caves and seams out of terrain.
@@ -423,6 +434,7 @@ class CaveGenerator(object):
 
     before = ("grass", "erosion", "simplex", "complex", "boring")
     after = tuple()
+
 
 class SaplingGenerator(object):
     """

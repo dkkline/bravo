@@ -29,17 +29,20 @@ edges3 = list(
 )
 edges3.sort()
 
+
 def dot2(u, v):
     """
     Dot product of two 2-dimensional vectors.
     """
     return u[0] * v[0] + u[1] * v[1]
 
+
 def dot3(u, v):
     """
     Dot product of two 3-dimensional vectors.
     """
     return u[0] * v[0] + u[1] * v[1] + u[2] * v[2]
+
 
 def reseed(seed):
     """
@@ -55,6 +58,7 @@ def reseed(seed):
     r.shuffle(p)
     p *= 2
     fields[seed] = p
+
 
 def set_seed(seed):
     """
@@ -73,6 +77,7 @@ current_seed = None
 
 f2 = 0.5 * (math.sqrt(3) - 1)
 g2 = (3 - math.sqrt(3)) / 6
+
 
 def simplex2(x, y):
     """
@@ -134,6 +139,7 @@ def simplex2(x, y):
 
     # Where's this scaling factor come from?
     return n * 70
+
 
 def simplex3(x, y, z):
     """
@@ -234,6 +240,7 @@ def simplex3(x, y, z):
     # Where's this scaling factor come from?
     return n * 32
 
+
 def simplex(*args):
     if len(args) == 2:
         return simplex2(*args)
@@ -241,6 +248,7 @@ def simplex(*args):
         return simplex3(*args)
     else:
         raise Exception("Don't know how to do %dD noise!" % len(args))
+
 
 def octaves2(x, y, count):
     """
@@ -264,6 +272,7 @@ def octaves2(x, y, count):
         count -= 1
     return sigma
 
+
 def octaves3(x, y, z, count):
     """
     Generate fractal octaves of noise.
@@ -283,6 +292,7 @@ def octaves3(x, y, z, count):
         divisor *= 2
         count -= 1
     return sigma
+
 
 def offset2(x, y, xoffset, yoffset, octaves=1):
     """

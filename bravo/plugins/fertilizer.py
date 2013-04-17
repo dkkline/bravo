@@ -5,6 +5,7 @@ from bravo.blocks import blocks, items
 from bravo.ibravo import IPreBuildHook
 from bravo.terrain.trees import ConeTree, NormalTree, RoundTree
 
+
 class Fertilizer(object):
     """
     Allows you to use bone meal to fertilize trees, and make them grow up

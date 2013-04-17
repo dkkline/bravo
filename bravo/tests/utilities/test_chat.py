@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from bravo.utilities.chat import complete
 
+
 class TestComplete(TestCase):
 
     def test_complete_single(self):

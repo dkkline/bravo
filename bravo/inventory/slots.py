@@ -8,6 +8,8 @@ all_recipes = all_ingredients + all_blueprints
 
 # XXX I am completely undocumented and untested; is this any way to go through
 # life? Test and document me!
+
+
 class comblist(object):
     def __init__(self, a, b):
         self.l = a, b
@@ -36,6 +38,7 @@ class comblist(object):
             self.l[1][key] = value
             return
         raise IndexError
+
 
 class SlotsSet(SerializableSlots):
     '''
@@ -79,6 +82,7 @@ class SlotsSet(SerializableSlots):
     def close(self, wid):
         # override me, see description in Crafting
         return [], ""
+
 
 class Crafting(SlotsSet):
     '''
@@ -175,6 +179,7 @@ class Crafting(SlotsSet):
 
         return items, packets
 
+
 class Workbench(Crafting):
 
     crafting = 9
@@ -182,6 +187,7 @@ class Workbench(Crafting):
     title = "Workbench"
     identifier = "workbench"
     slots_num = 9
+
 
 class ChestStorage(SlotsSet):
 
@@ -193,6 +199,7 @@ class ChestStorage(SlotsSet):
     def __init__(self):
         SlotsSet.__init__(self)
         self.title = "Chest"
+
 
 class LargeChestStorage(SlotsSet):
     """
@@ -211,6 +218,7 @@ class LargeChestStorage(SlotsSet):
     @property
     def metalist(self):
         return [self.storage]
+
 
 class FurnaceStorage(SlotsSet):
 

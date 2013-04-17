@@ -7,8 +7,10 @@ from bravo.beta.structures import Slot
 from bravo.inventory import SerializableSlots
 from bravo.inventory.slots import Crafting, Workbench, LargeChestStorage
 
+
 class NextLoop(Exception):
     pass
+
 
 class Window(SerializableSlots):
     """
@@ -325,6 +327,7 @@ class Window(SerializableSlots):
         # override later in SharedWindow
         return ""
 
+
 class InventoryWindow(Window):
     '''
     Special case of window - player's inventory window
@@ -370,6 +373,7 @@ class InventoryWindow(Window):
         else:
             return False
 
+
 class WorkbenchWindow(Window):
 
     def __init__(self, wid, inventory):
@@ -382,6 +386,7 @@ class WorkbenchWindow(Window):
         m = [self.slots.crafted, self.slots.crafting]
         m += [self.inventory.storage, self.inventory.holdables]
         return m
+
 
 class SharedWindow(Window):
     """
@@ -418,11 +423,13 @@ class SharedWindow(Window):
                                        count=item.quantity)
         return packets
 
+
 class ChestWindow(SharedWindow):
     @property
     def metalist(self):
         m = [self.slots.storage, self.inventory.storage, self.inventory.holdables]
         return m
+
 
 class LargeChestWindow(SharedWindow):
 
@@ -434,6 +441,7 @@ class LargeChestWindow(SharedWindow):
     def metalist(self):
         m = [self.slots.storage, self.inventory.storage, self.inventory.holdables]
         return m
+
 
 class FurnaceWindow(SharedWindow):
 

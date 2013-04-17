@@ -1,6 +1,7 @@
 from array import array
 from itertools import izip_longest
 
+
 def grouper(n, iterable, fillvalue=None):
     "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
     args = [iter(iterable)] * n
@@ -9,6 +10,7 @@ def grouper(n, iterable, fillvalue=None):
 """
 Bit-twiddling devices.
 """
+
 
 def unpack_nibbles(l):
     """
@@ -33,6 +35,7 @@ def unpack_nibbles(l):
         data.append(i & 0xf)
         data.append(i >> 4)
     return data
+
 
 def pack_nibbles(a):
     """

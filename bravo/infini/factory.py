@@ -19,6 +19,7 @@ entities_by_name = {
     "Pickup": Pickup,
 }
 
+
 class InfiniClientFactory(Factory):
     """
     A ``Factory`` that serves as an InfiniCraft client.
@@ -36,6 +37,7 @@ class InfiniClientFactory(Factory):
         log.msg("Starting connection to %s" % addr)
 
         return Factory.buildProtocol(self, addr)
+
 
 class InfiniNodeFactory(Factory):
     """

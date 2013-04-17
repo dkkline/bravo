@@ -4,6 +4,7 @@ from bravo.blocks import blocks
 from bravo.utilities.redstone import (RedstoneError, Asic, Lever, PlainBlock,
                                       Torch, Wire, bbool, truthify_block)
 
+
 class TestTruthifyBlock(TestCase):
     """
     Truthiness is serious business.
@@ -37,6 +38,7 @@ class TestTruthifyBlock(TestCase):
             truthify_block(True, blocks["redstone-wire"].slot, 0x9),
             (blocks["redstone-wire"].slot, 0x9))
 
+
 class TestBBool(TestCase):
     """
     Blocks are castable to bools, with the help of ``bbool()``.
@@ -60,6 +62,7 @@ class TestBBool(TestCase):
     def test_torch_true(self):
         self.assertTrue(bbool(blocks["redstone-torch"].slot, 0x0))
 
+
 class TestCircuitPlain(TestCase):
 
     def test_sand_iter_outputs(self):
@@ -70,6 +73,7 @@ class TestCircuitPlain(TestCase):
         sand = PlainBlock((0, 0, 0), blocks["sand"].slot, 0x0)
 
         self.assertTrue((0, 1, 0) in sand.iter_outputs())
+
 
 class TestCircuitTorch(TestCase):
 
@@ -119,6 +123,7 @@ class TestCircuitTorch(TestCase):
             torch.to_block(blocks["redstone-torch"].slot, metadata),
             (blocks["redstone-torch-off"].slot, metadata))
 
+
 class TestCircuitLever(TestCase):
 
     def test_lever_metadata_extra(self):
@@ -130,6 +135,7 @@ class TestCircuitLever(TestCase):
 
         metadata = blocks["lever"].orientation("-x")
         Lever((0, 0, 0), blocks["lever"].slot, metadata | 0x8)
+
 
 class TestCircuitCouplings(TestCase):
 
@@ -234,6 +240,7 @@ class TestCircuitCouplings(TestCase):
         wire.status = False
         sand.update()
         self.assertFalse(wire.status)
+
 
 class TestAsic(TestCase):
 

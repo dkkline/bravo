@@ -5,6 +5,7 @@ from twisted.trial import unittest
 from bravo.config import BravoConfigParser
 from bravo.beta.factory import BravoFactory
 
+
 class MockProtocol(object):
 
     username = None
@@ -12,6 +13,7 @@ class MockProtocol(object):
     def __init__(self, player):
         self.player = player
         self.location = player.location if player else None
+
 
 class TestBravoFactory(unittest.TestCase):
 
@@ -156,6 +158,7 @@ class TestBravoFactory(unittest.TestCase):
 
         self.assertFalse(self.f.set_username(p, "Hurp"))
 
+
 class TestBravoFactoryStarted(unittest.TestCase):
     """
     Tests which require ``startFactory()`` to be called.
@@ -245,6 +248,7 @@ class TestBravoFactoryStarted(unittest.TestCase):
         for player, radius, result in expected_results:
             found = [p.eid for p in self.f.players_near(player, radius)]
             self.assertEqual(set(found), set(result))
+
 
 class TestBravoFactoryPacks(unittest.TestCase):
     """

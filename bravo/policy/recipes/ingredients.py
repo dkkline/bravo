@@ -2,6 +2,7 @@ from bravo.blocks import blocks, items
 
 from bravo.beta.recipes import Ingredients
 
+
 def wool(color, dye):
     """
     Create a wool recipe.

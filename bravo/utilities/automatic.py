@@ -1,5 +1,6 @@
 from itertools import product
 
+
 def naive_scan(automaton, chunk):
     """
     Utility function which can be used to implement a naive, slow, but
@@ -16,6 +17,7 @@ def naive_scan(automaton, chunk):
             for i, block in enumerate(section.blocks):
                 coords = i & 0xf, (i >> 8) + index * 16, i >> 4 & 0xf
                 automaton.feed(coords)
+
 
 def column_scan(automaton, chunk):
     """

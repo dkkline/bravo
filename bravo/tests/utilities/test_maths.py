@@ -2,6 +2,7 @@ import unittest
 
 from bravo.utilities.maths import clamp, morton2
 
+
 class TestMorton(unittest.TestCase):
 
     def test_zero(self):
@@ -18,6 +19,7 @@ class TestMorton(unittest.TestCase):
 
     def test_second_full(self):
         self.assertEqual(morton2(0x0, 0xffff), 0xaaaaaaaa)
+
 
 class TestClamp(unittest.TestCase):
 

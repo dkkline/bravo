@@ -4,6 +4,7 @@ from operator import not_
 
 from bravo.blocks import blocks
 
+
 def truthify_block(truth, block, metadata):
     """
     Alter a block based on whether it should be true or false (on or off).
@@ -36,6 +37,7 @@ def truthify_block(truth, block, metadata):
     # Hmm...
     return block, metadata
 
+
 def bbool(block, metadata):
     """
     Get a Boolean value for a given block and metadata.
@@ -52,10 +54,12 @@ def bbool(block, metadata):
 
     return False
 
+
 class RedstoneError(Exception):
     """
     A ghost in the shell.
     """
+
 
 class Asic(object):
     """
@@ -180,6 +184,7 @@ class Asic(object):
             wire.metadata = 0
 
         return retval
+
 
 class Circuit(object):
     """
@@ -320,6 +325,7 @@ class Circuit(object):
     def to_block(self, block, metadata):
         return truthify_block(self.status, block, metadata)
 
+
 class Wire(Circuit):
     """
     The ubiquitous conductor of current.
@@ -344,6 +350,7 @@ class Wire(Circuit):
     def to_block(self, block, metadata):
         return block, self.metadata
 
+
 class PlainBlock(Circuit):
     """
     Any block which doesn't contain redstone. Traditionally, a sand block, but
@@ -359,6 +366,7 @@ class PlainBlock(Circuit):
     def op(*inputs):
         return any(inputs)
 
+
 class OrientedCircuit(Circuit):
     """
     A circuit which cares about its orientation.
@@ -370,6 +378,7 @@ class OrientedCircuit(Circuit):
         self.orientation = blocks[block].face(metadata)
         if self.orientation is None:
             raise RedstoneError("Bad metadata %d for %r!" % (metadata, self))
+
 
 class Torch(OrientedCircuit):
     """
@@ -419,6 +428,7 @@ class Torch(OrientedCircuit):
             yield x, y, z + 1
         if self.orientation != "+y":
             yield x, y - 1, z
+
 
 class Lever(OrientedCircuit):
     """

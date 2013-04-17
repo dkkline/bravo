@@ -2,6 +2,8 @@
 Utilities for coordinate handling and munging.
 """
 from math import floor, ceil
+
+
 def polar_round_vector(vector):
     """
     Rounds a vector towards zero
@@ -23,6 +25,7 @@ def polar_round_vector(vector):
 
     return calculated_x, calculated_y, calculated_z
 
+
 def split_coords(x, z):
     """
     Split a pair of coordinates into chunk and subchunk coordinates.
@@ -38,6 +41,7 @@ def split_coords(x, z):
 
     return first, second, third, fourth
 
+
 def taxicab2(x1, y1, x2, y2):
     """
     Return the taxicab distance between two blocks.
@@ -45,12 +49,14 @@ def taxicab2(x1, y1, x2, y2):
 
     return abs(x1 - x2) + abs(y1 - y2)
 
+
 def taxicab3(x1, y1, z1, x2, y2, z2):
     """
     Return the taxicab distance between two blocks, in three dimensions.
     """
 
     return abs(x1 - x2) + abs(y1 - y2) + abs(z1 - z2)
+
 
 def adjust_coords_for_face(coords, face):
     """

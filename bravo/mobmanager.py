@@ -4,6 +4,7 @@ from sys import maxint
 from bravo.errors import ChunkNotLoaded
 from bravo.simplex import dot3
 
+
 class MobManager(object):
 
     """

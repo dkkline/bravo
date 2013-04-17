@@ -9,6 +9,7 @@ from bravo.utilities.coords import split_coords
 
 csv.register_dialect("hey0", delimiter=":")
 
+
 def get_locations(data):
     d = {}
     for line in csv.reader(StringIO(data), dialect="hey0"):
@@ -21,12 +22,14 @@ def get_locations(data):
         d[name] = (x, y, z, yaw, pitch)
     return d
 
+
 def put_locations(d):
     data = StringIO()
     writer = csv.writer(data, dialect="hey0")
     for name, stuff in d.iteritems():
         writer.writerow([name] + list(stuff))
     return data.getvalue()
+
 
 class Home(object):
     """
@@ -65,6 +68,7 @@ class Home(object):
     aliases = tuple()
     usage = ""
 
+
 class SetHome(object):
     """
     Set a player's home.
@@ -93,6 +97,7 @@ class SetHome(object):
     name = "sethome"
     aliases = tuple()
     usage = ""
+
 
 class Warp(object):
     """
@@ -140,6 +145,7 @@ class Warp(object):
     aliases = tuple()
     usage = "<location>"
 
+
 class ListWarps(object):
     """
     List preset warp locations.
@@ -173,6 +179,7 @@ class ListWarps(object):
     aliases = tuple()
     usage = ""
 
+
 class SetWarp(object):
     """
     Set a warp location.
@@ -204,6 +211,7 @@ class SetWarp(object):
     aliases = tuple()
     usage = "<name>"
 
+
 class RemoveWarp(object):
     """
     Remove a warp location.
@@ -234,6 +242,7 @@ class RemoveWarp(object):
     aliases = tuple()
     usage = "<name>"
 
+
 class Ascend(object):
     """
     Warp to a location above the current location.
@@ -256,6 +265,7 @@ class Ascend(object):
     name = "ascend"
     aliases = tuple()
     usage = ""
+
 
 class Descend(object):
     """

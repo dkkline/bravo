@@ -3,6 +3,7 @@ import unittest
 from bravo.utilities.paths import (base36, names_for_chunk, name_for_anvil,
         name_for_region)
 
+
 class TestAlphaUtilities(unittest.TestCase):
 
     def test_names_for_chunk(self):
@@ -16,6 +17,7 @@ class TestAlphaUtilities(unittest.TestCase):
         self.assertEqual(base36(-47), "-1b")
         self.assertEqual(base36(137), "3t")
         self.assertEqual(base36(24567), "iyf")
+
 
 class TestBetaUtilities(unittest.TestCase):
 

@@ -6,6 +6,7 @@ from zope.interface import implements
 from bravo.blocks import blocks
 from bravo.ibravo import IDigHook
 
+
 class AlphaSnow(object):
     """
     Notch-style snow handling.
@@ -28,6 +29,7 @@ class AlphaSnow(object):
 
     before = tuple()
     after = tuple()
+
 
 class Give(object):
     """
@@ -62,6 +64,7 @@ class Give(object):
 
     before = tuple()
     after = tuple()
+
 
 class Torch(object):
     """

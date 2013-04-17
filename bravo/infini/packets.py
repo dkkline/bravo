@@ -12,6 +12,7 @@ AlphaString = functools.partial(PascalString,
     length_field=UBInt16("length"),
     encoding="utf8")
 
+
 def String(name):
     """
     UTF-8 length-prefixed string.
@@ -19,6 +20,7 @@ def String(name):
 
     return PascalString(name, length_field=UBInt16("length"),
         encoding="utf-8")
+
 
 def InfiniPacket(name, identifier, subconstruct):
     """
@@ -77,6 +79,7 @@ infinipacket_parser = Struct("parser",
     ),
 )
 
+
 def parse_packets(bytestream):
     container = infinipacket_parser.parse(bytestream)
 
@@ -89,6 +92,7 @@ def parse_packets(bytestream):
             print packet[1]
 
     return l, leftovers
+
 
 def make_packet(packet, *args, **kwargs):
     """

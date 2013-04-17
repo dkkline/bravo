@@ -4,6 +4,7 @@ import math
 
 from bravo.location import Location, Orientation, Position
 
+
 class TestPosition(unittest.TestCase):
 
     def test_add(self):
@@ -61,6 +62,7 @@ class TestPosition(unittest.TestCase):
 
         self.assertTrue(first.heading(second) >= 0)
 
+
 class TestOrientation(unittest.TestCase):
 
     def test_from_degs(self):
@@ -83,6 +85,7 @@ class TestOrientation(unittest.TestCase):
     def test_to_fracs_rounding(self):
         o = Orientation.from_degs(180, 0)
         self.assertEqual(o.to_fracs(), (127, 0))
+
 
 class TestLocation(unittest.TestCase):
 
@@ -128,6 +131,7 @@ class TestLocation(unittest.TestCase):
 
         self.assertEqual(other.pos.x, -32)
         self.assertEqual(other.pos.z, 0)
+
 
 class TestLocationConstructors(unittest.TestCase):
 
